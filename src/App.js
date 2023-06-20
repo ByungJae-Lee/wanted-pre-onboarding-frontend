@@ -24,34 +24,60 @@ function App() {
   console.log(valid)
 
   return (
-  <div>
-    <input 
-      value={username}
-      type='text'
-      data-testid="email-input"
-      name='message'
-      onChange={(e) => {
-        setUsername(e.target.value);
-      }}
-     />
-    <input 
-    value={password}
-    type='text'
-    name='message'
-    data-testid="password-input" 
-    onChange={(e) => {
-      setPassword(e.target.value);
-    }}
-    />
+  <div className='page'>
+{/* 이메일 주소란 */}
+    <div className='contentWrap'>
+      <div className='inputTitle'>이메일주소</div>
+        <div className='inputWrap'>
+          <input 
+            className='input'
+            placeholder='test@gmail.com'
+            value={username}
+            type='text'
+            data-testid="email-input"
+            name='message'
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+        </div>
+          <div className='errMsgWrap'>
+            "@"를 포함한 이메일을 입력해주세요
+          </div>
+        
+{/* pw 입력란 */}
+      <div style={{marginTop:"26px"}} className='inputTitle'>비밀번호</div>
+        <div className='inputWrap'>
+          <input 
+            className='input'
+            placeholder='8자 이상'
+            value={password}
+            type='text'
+            name='message'
+            data-testid="password-input" 
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </div>
+        <div className='errMsgWrap'>
+          8자 이상 입력해주세요
+        </div>
+        
+        <button
+        disabled={valid ? false : true}
+        data-testid="signup-button">제출
+        </button>
+
+    </div>
+
     
-  
-    <button
-    disabled={valid ? false : true}
+
     
-    data-testid="signup-button">제출
     
-    </button>
-    <button data-testid="signup-button">회원가입</button>
+    
+
+    
 
   </div>
   
