@@ -6,26 +6,22 @@ import TodoPage from './TodoPage';
 
 
 function Routing() {
-
   const navigate = useNavigate();
 
     useEffect(() => {
       const token = localStorage.getItem('token');
       if (token) {
-        navigate("/TodoPage")
+        navigate("/todo")
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   return (
-    <div className='page'>
       <Routes>
         <Route path='/' element={<SignupPage />}  />
-        <Route path='/LoginPage' element={<LoginPage />}  />
-        <Route path='/TodoPage' element={<TodoPage />}  />
+        <Route path='/login' element={<LoginPage />}  />
+        <Route path='/todo' element={<TodoPage />}  />
       </Routes>
-
-    </div>
-  )
+  );
 }
-
 export default Routing;

@@ -20,7 +20,7 @@ function LoginPage() {
     }
   }, [username, password])
 
-  const LogInSumit = async (event) => {
+  const loginSumit = async (event) => {
     event.preventDefault();
 
     await axios.post("https://www.pre-onboarding-selection-task.shop/auth/signin", {
@@ -29,8 +29,9 @@ function LoginPage() {
     })
     .then((res) => {
       window.localStorage.setItem("token", res.data.access_token);
-      console.log("로그인 성공");
-      navigate("/TodoPage");
+      console.log(localStorage);
+
+      navigate("/todo");
     })
     .catch((err) => {
       console.log("로그인 실패")
@@ -82,7 +83,7 @@ return (
         
         <button
         type='submit'
-        onClick={LogInSumit}
+        onClick={loginSumit}
         disabled={valid ? false : true}
         data-testid="signup-button">로그인
         </button>

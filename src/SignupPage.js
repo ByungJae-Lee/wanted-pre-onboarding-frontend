@@ -19,26 +19,25 @@ function SignupPage() {
     }
   }, [username, password])
   
-  // axios
+  
   const handleSignUpSubmit = (event) => {
     event.preventDefault();
     axios.post("https://www.pre-onboarding-selection-task.shop/auth/signup", {
-      // headers: {"Content-Type": 'application/json'},
       email: username,
       password: password,
     })
     .then((res) => {
       console.log("회원가입 성공");
-      navigate("/LoginPage");
+      navigate("/login");
     })
     .catch((err) => {
-      console.log("회원가입 실패");
+      console.log(err);
     })
   }
 
   return (
   <div className='page'>
-{/* 이메일 주소란 */}
+
     <div className='contentWrap'>
       <div className='inputTitle'>이메일주소</div>
         <div className='inputWrap'>
@@ -58,7 +57,7 @@ function SignupPage() {
             "@"를 포함한 이메일을 입력해주세요
           </div>
         
-{/* pw 입력란 */}
+
       <div style={{marginTop:"26px"}} className='inputTitle'>비밀번호</div>
         <div className='inputWrap'>
           <input 
@@ -85,12 +84,6 @@ function SignupPage() {
         >
         회원가입
         </button>
-        <p>
-          <button type='button' onClick={() => navigate('LoginPage')}>
-            로그인
-          </button>
-          하러가기
-        </p>
     </div>
   </div>
   
