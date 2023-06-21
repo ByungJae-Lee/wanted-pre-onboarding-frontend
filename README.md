@@ -5,6 +5,9 @@
 - 지원자의 성명 : 이병재
 - 프로젝트 실행 방법 : glt clone - npm - npm start
 - 소감 : 공고를 너무 늦게봐  최대한 만들어봤습니다
+- 데모영상: https://github.com/ByungJae-Lee/wanted-pre-onboarding-frontend/assets/104547210/69279f75-f807-4cdd-9215-e022fadad842
+
+
 
 ### 사용한 라이브러리
 
